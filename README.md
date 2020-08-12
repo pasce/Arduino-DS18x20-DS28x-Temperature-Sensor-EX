@@ -37,7 +37,7 @@ If you **need help with the wiring** check out this site: [**How to interface mu
  - It is suitable for demonstration purposes only
  - It might **find all different types** of 1-wire sensors on the line but can **deal with temperature sensors only** 
  - The code **only finds a maximum number** of sensors which is defined by *MAX\_NUMBER\_OF\_POSSIBLE\_SENSORS\_FOUND*
-	 * ...but that's not problem because you can set the number as high as you want. Restricted only by the amount of available RAM
+	 * ...but that's not problem because you can set the number as high as you want. Restricted only by the amount of available memory for globals.
  - Because the code was written for demonstration purposes **it is very verbose** and unoptimized
 
 ## Program Flow
@@ -54,12 +54,12 @@ If you **need help with the wiring** check out this site: [**How to interface mu
 
 ## Additional Info
 To avoid dynamic memory allocation, a preprocessor variable: **MAX\_NUMBER\_OF\_POSSIBLE\_SENSORS\_FOUND**
-is used to specify the size of the statically allocated array which holds the address of each sensor.
+is used to specify the maximum number of discoverable sensors. This integer is used to statically allocated the needed memory (globals) for the array (temp_sensors) that stores the address of each sensor.
 
 However, this approach limits the number of devices that can be found by the script. It's a little ugly but does the job.
 You will need **8 bytes of global memory to store a single device address**.
 
-eg: **MAX\_NUMBER\_OF\_POSSIBLE\_SENSORS\_FOUND = 10** -> max. 10 discoverable sensors * 8 bytes for each seansor = **80 bytes** in total.
+eg: **MAX\_NUMBER\_OF\_POSSIBLE\_SENSORS\_FOUND = 10** -> max. 10 discoverable sensors * 8 bytes for each sensor = **80 bytes** in total.
 
 You can change **MAX\_NUMBER\_OF\_POSSIBLE\_SENSORS\_FOUND** to **any integer that is suitable** for your project as long as you have enough (global) RAM and as long as it's **bigger or equal than the actual number of physical devices** hooked up on the bus.
 
