@@ -25,7 +25,7 @@ Both libraries can be installed through the Arduino IDE.
 
 
 ## Prerequirements
-- Your **sensors are wired correctly** according to the 1-wire bus system ([Normal power mode](https://www.tweaking4all.com/wp-content/uploads/2014/03/ds18b20-normal-power-400x184.jpg "Normal mode") or [parasite power mode](https://www.tweaking4all.com/wp-content/uploads/2014/03/ds18b20-normal-power-400x184.jpg "parasite mode"))
+- Your **sensors are wired correctly** according to the 1-wire bus system ([Normal power mode](https://www.tweaking4all.com/wp-content/uploads/2014/03/ds18b20-normal-power-400x184.jpg "Normal mode") or [parasite power mode](https://www.tweaking4all.com/wp-content/uploads/2014/03/ds18b20-parasite-power-400x181.jpg "parasite mode"))
 - Your circuit is hooked up to an Arduino board on **digital input PIN2**
 - Connect: GND <-> GND, DATA <-> PIN2, VCC <-> 3,3V or 5V.
 	- You use one **pull up resistor** (4.7k ohm)  between **Data and VCC** to be able to read from the sensors etc.
