@@ -27,9 +27,15 @@ Temperature Sensor | Device family code | Additional Info
 **DS28EA00 MODEL**  |         0x42       |
 
 ## Circuit & Wiring
-Wiring diagram of one DS1820 temperature sensor. The sensor can be operated in normal mode or parasite mode. In parasite mode the sensor gets its energy from the data line (which is connected to VCC) when no data is transmitted. The energy is stored in a small capacitor inside the sensor and used for the next data transmission.
+Wiring diagram of one DS1820 temperature sensor. The sensor can be operated in normal mode or parasite mode. In parasite mode the sensor gets its energy from the data line (which is connected to VCC [3.3V or 5V]) when no data is transmitted. The energy is stored in a small capacitor inside the sensor and is used for the next data transmission.
 
 ![Example output](https://raw.githubusercontent.com/pasce/Arduino-DS18x20-DS28x-Temperature-Sensor-EX/master/assets/maxi-dallas_ds1820_and_wiring.png)
+
+### Example: Wiring multiple DS1820 / DS18B20 temperature sensors in parasite mode on a single bus
+
+![Example output](https://raw.githubusercontent.com/pasce/Arduino-DS18x20-DS28x-Temperature-Sensor-EX/master/assets/arduino_ds1820_parasite_mode_wiring_circuit_grey.png)
+
+If you **need additional help with wiring** check out this site: [**How to interface multiple DS18B20 on a single bus**](https://lastminuteengineers.com/multiple-ds18b20-arduino-tutorial/ "How to interface multiple DS18B20 on a single bus") 
 
 ## The following libraries are used for the sake of convenience
 - [**OneWire library**](https://www.pjrc.com/teensy/td_libs_OneWire.html "OneWire library")
@@ -49,8 +55,6 @@ Both libraries can be installed through the Arduino IDE.
 - Your circuit is hooked up to an Arduino board on Digital Input/Output **PIN2**
 - Connect: GND <-> GND, DATA <-> PIN2, VCC <-> 3,3V or 5V.
 	- You are using one **pull up resistor** (4.7k ohm)  between **Data and VCC** to be able to read from the sensors etc.
-
-If you **need help with the wiring** check out this site: [**How to interface multiple DS18B20 on a single bus**](https://lastminuteengineers.com/multiple-ds18b20-arduino-tutorial/ "How to interface multiple DS18B20 on a single bus") 
 
 ## Caveats
  - This sketch is functional but **has not been thoroughly tested**
