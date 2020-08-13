@@ -26,6 +26,11 @@ Temperature Sensor | Device family code | Additional Info
 **DS1825MODEL**    |         0x3B       |
 **DS28EA00MODEL**  |         0x42       |
 
+## Circuit & Wiring
+Wiring diagram of one DS1820 temperature sensor. The sensor can be operated in normal mode or parasite mode. In parasite mode the sensor gets its energy from the data line (which is connected to VCC) when no data is transmitted. The energy is stored in a small capacitor inside the sensor and used for the next data transmission.
+
+![Example output](https://raw.githubusercontent.com/pasce/Arduino-DS18x20-DS28x-Temperature-Sensor-EX/master/assets/maxi-dallas_ds1820_and_wiring.png)
+
 ## The following libraries are used for the sake of convenience
 - [**OneWire library**](https://www.pjrc.com/teensy/td_libs_OneWire.html "OneWire library")
 - [**DallasTemperature library**](https://github.com/milesburton/Arduino-Temperature-Control-Library "DallasTemperature library")
