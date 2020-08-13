@@ -29,7 +29,7 @@ Temperature Sensor | Device family code | Additional Info
 ## The following libraries are used for the sake of convenience
 - [**OneWire library**](https://www.pjrc.com/teensy/td_libs_OneWire.html "OneWire library")
 - [**DallasTemperature library**](https://github.com/milesburton/Arduino-Temperature-Control-Library "DallasTemperature library")
-git p
+
 Both libraries can be installed through the Arduino IDE.
 
  - Go to **Tools** -> **Manage libraries...**
