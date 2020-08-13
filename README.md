@@ -13,7 +13,7 @@ The unique and unchangeable 64-bit ID of a 1-wire device consists of a 48-bit se
     0x10 0x01 0xCB 0xC2 0x02 0x07 0x00 0x99
 
 - **0x10**: Stands for the device family code (See below)
-- **0x01 0xCB 0xC2 0x02 0x08 0x00**: Represents the serial number
+- **0x01 0xCB 0xC2 0x02 0x07 0x00**: Represents the serial number
 - **0x99**: 8-bit CRC checksum
 
 ## Supported temperature sensors with their respective device family codes
