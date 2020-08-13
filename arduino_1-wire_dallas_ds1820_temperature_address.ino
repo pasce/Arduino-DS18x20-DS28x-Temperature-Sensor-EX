@@ -121,18 +121,25 @@ void setup(void)
       printAddress(temp_sensors[i]);
       Serial.println();
 
-      Serial.print("Setting resolution for sensor: ");
-      printAddress(temp_sensors[i]);
-      Serial.print(" to: ");
+      // check the crc checksum of the received bytes to be sure that they are not garbage 
+      Serial.print("CRC: ");
+      Serial.print(OneWire::crc8(temp_sensors[i], 7),HEX);
+        
+      if (OneWire::crc8(temp_sensors[i], 7) != temp_sensors[i][7]){ 
+        Serial.println(" is NOT valid!");
+      }
+      else {
+        Serial.println(" is valid!");
+      }
+
+      Serial.print("Setting resolution to: ");
       Serial.print(TEMPERATURE_PRECISION);
       Serial.println(" bit");
       
       sensors.setResolution(temp_sensors[i], TEMPERATURE_PRECISION);
       delay(100);
 
-      Serial.print("Getting resolution for sensor ");
-      printAddress(temp_sensors[i]);
-      Serial.print(": ");
+      Serial.print("Getting resolution: ");
       Serial.print(sensors.getResolution(temp_sensors[i]), DEC);
       Serial.println(" bit");
       
@@ -151,7 +158,7 @@ void loop(void)
   for(int i=0;i<sensorCount;i++) {
     Serial.print("Sensor: ");
     Serial.print(i);
-    Serial.print(" @");
+    Serial.print(" ");
     printAddress(temp_sensors[i]);
     Serial.println();
     Serial.print("Temperatur: "); 

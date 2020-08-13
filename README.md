@@ -8,7 +8,7 @@ This sketch can be used to **check the functionality** of a circuit or to list t
 ## Sensor Identification Number
 The unique and unchangeable 64-bit ID of a 1-wire device consists of a 48-bit serial number, an 8-bit family code and an 8-bit CRC checksum. The ID is used to communicate with a 1-wire device on the bus and *must* be unique.
 
-**Example of a 64 bit 1-wire device id**:
+**Example of a 64-bit 1-wire device id**:
 
     0x10 0x01 0xCB 0xC2 0x02 0x07 0x00 0x99
 
@@ -29,7 +29,7 @@ Temperature Sensor | Device family code | Additional Info
 ## The following libraries are used for the sake of convenience
 - [**OneWire library**](https://www.pjrc.com/teensy/td_libs_OneWire.html "OneWire library")
 - [**DallasTemperature library**](https://github.com/milesburton/Arduino-Temperature-Control-Library "DallasTemperature library")
-
+git p
 Both libraries can be installed through the Arduino IDE.
 
  - Go to **Tools** -> **Manage libraries...**
