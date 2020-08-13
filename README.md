@@ -20,11 +20,11 @@ The unique and unchangeable 64-bit ID of a 1-wire device consists of a 48-bit se
 
 Temperature Sensor | Device family code | Additional Info
 ------------------ | ------------------ | ------------------
-**DS18S20MODEL**   |         0x10       |  also DS1820
-**DS18B20MODEL**   |         0x28       |  also MAX31820
-**DS1822MODEL**    |         0x22       |
-**DS1825MODEL**    |         0x3B       |
-**DS28EA00MODEL**  |         0x42       |
+**DS18S20 MODEL**   |         0x10       |  also DS1820
+**DS18B20 MODEL**   |         0x28       |  also MAX31820
+**DS1822 MODEL**    |         0x22       |
+**DS1825 MODEL**    |         0x3B       |
+**DS28EA00 MODEL**  |         0x42       |
 
 ## Circuit & Wiring
 Wiring diagram of one DS1820 temperature sensor. The sensor can be operated in normal mode or parasite mode. In parasite mode the sensor gets its energy from the data line (which is connected to VCC) when no data is transmitted. The energy is stored in a small capacitor inside the sensor and used for the next data transmission.
