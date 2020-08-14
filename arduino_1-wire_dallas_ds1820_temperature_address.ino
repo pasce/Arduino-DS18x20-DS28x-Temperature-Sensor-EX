@@ -72,7 +72,7 @@
 // specify the max. number of discoverable sensors. 8 Byte per sensor needed.
 #define MAX_NUMBER_OF_POSSIBLE_SENSORS_FOUND 10 //<- change if you want more sensors to be discovered
 
-// most sensors support 9-12 bit precission. Lower resolution means faster readings
+// most sensors support 9-12 bit precision. Lower resolution means faster readings
 #define TEMPERATURE_PRECISION 12
 
 OneWire oneWire(ONE_WIRE_BUS);
