@@ -92,19 +92,19 @@ void setup(void)
   sensors.begin();
   sensorCount = sensors.getDeviceCount();
   
-  Serial.print("Number of sensors found: ");
+  Serial.print(F("Number of sensors found: "));
   Serial.println(sensorCount);
 
   if (sensorCount > MAX_NUMBER_OF_POSSIBLE_SENSORS_FOUND) {
-    Serial.print("ERROR: MAX_NUMBER_OF_POSSIBLE_SENSORS_FOUND is too small. Set it at least to: ");
+    Serial.print(F("ERROR: MAX_NUMBER_OF_POSSIBLE_SENSORS_FOUND is too small. Set it at least to: "));
     Serial.println(sensorCount);
 
   }
   
   // report parasite power requirements
-  Serial.print("Parasite power is: ");
+  Serial.print(F("Parasite power is: "));
   if (sensors.isParasitePowerMode()) Serial.println("ON");
-  else Serial.println("OFF");
+  else Serial.println(F("OFF"));
 
   // search for 1-wire devices. always perform a reset before starting a search
   oneWire.reset_search();
@@ -112,36 +112,36 @@ void setup(void)
   for(int i=0;i<sensorCount;i++) {
     
     if (!oneWire.search(temp_sensors[i])) {
-      Serial.print("Unable to find address for sensor: ");
+      Serial.print(F("Unable to find address for sensor: "));
       Serial.println(i);
     }
     else {
       Serial.println();
-      Serial.print("Sensor found with address: ");
+      Serial.print(F("Sensor found with address: "));
       printAddress(temp_sensors[i]);
       Serial.println();
 
       // check the crc checksum of the received bytes to be sure that they are not garbage 
-      Serial.print("CRC: ");
+      Serial.print(F("CRC: "));
       Serial.print(OneWire::crc8(temp_sensors[i], 7),HEX);
         
       if (OneWire::crc8(temp_sensors[i], 7) != temp_sensors[i][7]){ 
-        Serial.println(" is NOT valid!");
+        Serial.println(F(" is NOT valid!"));
       }
       else {
-        Serial.println(" is valid!");
+        Serial.println(F(" is valid!"));
       }
 
-      Serial.print("Setting resolution to: ");
+      Serial.print(F("Setting resolution to: "));
       Serial.print(TEMPERATURE_PRECISION);
-      Serial.println(" bit");
+      Serial.println(F(" bit"));
       
       sensors.setResolution(temp_sensors[i], TEMPERATURE_PRECISION);
       delay(100);
 
-      Serial.print("Getting resolution: ");
+      Serial.print(F("Getting resolution: "));
       Serial.print(sensors.getResolution(temp_sensors[i]), DEC);
-      Serial.println(" bit");
+      Serial.println(F(" bit"));
       
     }
   }
@@ -156,14 +156,14 @@ void loop(void)
   // output the temperature readings of all sensors in degree Celius and Fahrenheit
   // conversions are done by the library
   for(int i=0;i<sensorCount;i++) {
-    Serial.print("Sensor: ");
+    Serial.print(F("Sensor: "));
     Serial.print(i);
     Serial.print(" ");
     printAddress(temp_sensors[i]);
     Serial.println();
-    Serial.print("Temperatur: "); 
+    Serial.print(F("Temperatur: ")); 
     printValue(sensors.getTempCByIndex(i), "°C");
-    Serial.print("Temperatur: ");
+    Serial.print(F("Temperatur: "));
     printValue(sensors.getTempFByIndex(i), "°F");
   }
   Serial. println();
