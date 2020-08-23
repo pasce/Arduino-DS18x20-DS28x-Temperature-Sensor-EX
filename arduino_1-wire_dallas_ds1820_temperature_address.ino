@@ -121,7 +121,7 @@ void setup(void)
       printAddress(temp_sensors[i]);
       Serial.println();
 
-      // check the crc checksum of the received bytes to be sure that they are not garbage 
+      // check the crc checksum of the received bytes to be sure that the addresses are not garbage 
       Serial.print(F("CRC: "));
       Serial.print(OneWire::crc8(temp_sensors[i], 7),HEX);
         
