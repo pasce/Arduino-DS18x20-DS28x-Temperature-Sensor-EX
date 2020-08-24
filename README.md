@@ -1,6 +1,6 @@
 # Temperature Sensor (DS18x20) Sketch Example for Arduino
 
-This Arduino sketch **lists the addresses** of all 1-wire enabled *DS18x and DS2x* temperature sensors on a single bus (via the [**1-Wire serial protocol**](https://en.wikipedia.org/wiki/1-Wire "1-Wire serial protocol")), fetches their addresses (to be more precise: Their unique 64 bit ID) and **outputs their temperature readings** to the specified serial port in degree Celsius and Fahrenheit.
+This Arduino sketch **lists the addresses** of all *DS18x and DS2x* temperature sensors on a single bus (via the [**1-Wire serial protocol**](https://en.wikipedia.org/wiki/1-Wire "1-Wire serial protocol")), fetches their addresses (to be more precise: Their unique 64 bit ID) and **outputs their temperature readings** to the specified serial port in degree Celsius and Fahrenheit.
 
 This sketch can be used to **check the functionality** of a circuit or to list the **hardware addresses** of the hooked up **temperature sensors**.
  
